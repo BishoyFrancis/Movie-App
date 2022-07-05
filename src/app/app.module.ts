@@ -14,8 +14,6 @@ import {ColorPickerModule} from 'primeng/colorpicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DropdownModule} from 'primeng/dropdown';
 import {SpeedDialModule} from 'primeng/speeddial';
-import { RegisterComponent } from './auth/register/register.component';
-import { LoginComponent } from './auth/login/login.component';
 
 
 
@@ -26,8 +24,7 @@ import { LoginComponent } from './auth/login/login.component';
     LandingPageComponent,
     FooterComponent,
     NotFoundComponent,
-    RegisterComponent,
-    LoginComponent
+
   ],
 
   imports: [
