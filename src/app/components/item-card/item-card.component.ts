@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ItemCardComponent implements OnInit {
 
 
-  baseUrl:string="https://image.tmdb.org/t/p/original/";
+  baseUrl:string="https://image.tmdb.org/t/p/w500/";
   
   @Input() itemData:any=[];
 

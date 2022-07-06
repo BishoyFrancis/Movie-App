@@ -5,14 +5,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 @Component({
   selector: 'app-trending-movies',
   templateUrl: './trending-movies.component.html',
-  styleUrls: ['./trending-movies.component.scss'],
-  animations:[
-    trigger('fade',[
-      state('void',style({opacity:0})),
-      transition('void => *',[animate('1s')]),
-      transition('* => void',[animate('500ms')])
-    ])
-  ]
+  styleUrls: ['./trending-movies.component.scss']
 })
 export class TrendingMoviesComponent implements OnInit {
 
@@ -25,16 +18,10 @@ export class TrendingMoviesComponent implements OnInit {
   constructor(private _moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    this._moviesService.getMovies().subscribe((res:any)=>{
+    this._moviesService.getMovies("movie").subscribe((res:any)=>{
       this.movies=res.results;
-      console.log(this.movies)
     })
-    setInterval(()=>{
-      this.slideIndex++; 
-      if(this.slideIndex==this.movies.length){
-        this.slideIndex=0;
-      }
-    },5000)
+    
   }
 
 }

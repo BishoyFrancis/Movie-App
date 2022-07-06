@@ -16,10 +16,15 @@ import { FormsModule } from '@angular/forms';
 import {DropdownModule} from 'primeng/dropdown';
 import {SpeedDialModule} from 'primeng/speeddial';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import {TrendingMoviesComponent} from './trending/trending-movies/trending-movies.component'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ItemsComponent } from './components/items/items.component';
-import { ItemCardComponent } from './components/item-card/item-card.component'
+import { ItemCardComponent } from './components/item-card/item-card.component';
+import { SliderComponent } from './components/slider/slider.component';
+import {TrendingMoviesComponent} from './trending/trending-movies/trending-movies.component';
+import {TrendingTvComponent} from './trending/trending-tv/trending-tv.component';
+import {TrendingPeopleComponent} from './trending/trending-people/trending-people.component';
+import {TrendingFavouriteComponent} from './trending/trending-favourite/trending-favourite.component';
+import {DetailsComponent} from './trending/details/details.component';
 
 
 
@@ -31,9 +36,13 @@ import { ItemCardComponent } from './components/item-card/item-card.component'
     NotFoundComponent,
     NavBarComponent,
     TrendingMoviesComponent,
+    TrendingFavouriteComponent,
+    TrendingPeopleComponent,
+    TrendingTvComponent,
+    DetailsComponent,
     ItemsComponent,
-    ItemCardComponent
-    
+    ItemCardComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,

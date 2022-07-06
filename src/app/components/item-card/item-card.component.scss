@@ -1,9 +1,10 @@
 .card{
+    padding: 0;
     text-decoration: none;
     display: block;
     min-height: 350px;
     border-radius: 5px;
-    width: 15rem;
+    background-color: black;
     color: white;
     &-image{
         img{
@@ -11,7 +12,7 @@
             border-radius: 5px;
             height: 350px;
             object-fit: cover;
-            border: 1px solid white;
+            
             
         }
         &:after{
@@ -26,19 +27,28 @@
         }
     }
     &-pane{
-        position: absolute;
-        width: 80%;
+       
         bottom: 1rem;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
         text-align: center;
         &-rating{
+            text-align: left;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
             font-size: 1rem;
             color: white;
+            
+            padding: .5rem;
         }
         &-title{
+            width: 80%;
+            position: absolute;
+            bottom: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
             font-size: 1rem;
             color: white;
         }
