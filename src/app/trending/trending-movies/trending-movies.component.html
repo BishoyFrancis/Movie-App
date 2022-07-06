@@ -1,1 +1,23 @@
-<p>trending-movies works!</p>
+<div class="slider">
+    <ng-container *ngFor="let movie of movies; let i=index">
+    <div class="slide"  *ngIf="i== slideIndex" @fade>
+        <div class="slide-backGround">
+            <img class="slide-backGround-image" [src]="baseUrl+movie.poster_path" alt="">
+        </div>
+        <div class="slide-pane" >
+            <h2 class="movieName">{{movie.title}}</h2>
+            <div class="desc">
+                <div class="info">
+                    <span class="rating d-block">
+                        <span>  </span><span class="rating-value">{{movie.vote_average | number:'1.0-1'}} <i class="pi pi-star-fill mx-1 my-3"> </i></span><span class="iSpace mx-2">|</span>
+                        <span>{{movie.vote_count}} Reviews<span class="iSpace mx-2">|</span></span>
+                        <span>{{movie.release_date | date}}</span>
+                        <span class="d-block mt-4">{{movie.overview}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+</div>
+<app-items [items]="movies"></app-items>

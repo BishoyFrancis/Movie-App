@@ -8,20 +8,22 @@ import { TrendingTvComponent } from './trending-tv/trending-tv.component';
 import { TrendingPeopleComponent } from './trending-people/trending-people.component';
 import { TrendingFavouriteComponent } from './trending-favourite/trending-favourite.component';
 import { DetailsComponent } from './details/details.component';
+import { BrowserModule } from '@angular/platform-browser'
+
 
 
 @NgModule({
   declarations: [
     TrendingHomeComponent,
-    TrendingMoviesComponent,
     TrendingTvComponent,
     TrendingPeopleComponent,
     TrendingFavouriteComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   imports: [
     CommonModule,
-    TrendingRoutingModule
+    TrendingRoutingModule,
+    BrowserModule
   ]
 })
 export class TrendingModule { }
