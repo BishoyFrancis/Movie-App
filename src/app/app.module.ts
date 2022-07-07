@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +15,18 @@ import {ColorPickerModule} from 'primeng/colorpicker';
 import { FormsModule } from '@angular/forms';
 import {DropdownModule} from 'primeng/dropdown';
 import {SpeedDialModule} from 'primeng/speeddial';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ItemsComponent } from './components/items/items.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
+import { SliderComponent } from './components/slider/slider.component';
+import {TrendingMoviesComponent} from './trending/trending-movies/trending-movies.component';
+import {TrendingTvComponent} from './trending/trending-tv/trending-tv.component';
+import {TrendingPeopleComponent} from './trending/trending-people/trending-people.component';
+import {TrendingFavouriteComponent} from './trending/trending-favourite/trending-favourite.component';
+import {DetailsComponent} from './trending/details/details.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,15 +34,25 @@ import {SpeedDialModule} from 'primeng/speeddial';
     LandingPageComponent,
     FooterComponent,
     NotFoundComponent,
-    
+    NavBarComponent,
+    TrendingMoviesComponent,
+    TrendingFavouriteComponent,
+    TrendingPeopleComponent,
+    TrendingTvComponent,
+    DetailsComponent,
+    ItemsComponent,
+    ItemCardComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ButtonModule,
     SpeedDialModule,
     ColorPickerModule,
+    HttpClientModule,
     DropdownModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

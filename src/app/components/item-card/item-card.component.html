@@ -1,0 +1,16 @@
+<a class="card m-1" routerLink="/details">
+    
+    <div class="card-image">
+        <img [src]="baseUrl+itemData.poster_path" alt="" class="img-fluid">
+    </div>
+    <div class="card-pane">
+        <div class="card-pane-rating">
+            <span>{{itemData.vote_average | number:'1.0-1'}} </span>
+            <i class="pi pi-star-fill text-warning"> </i>
+        </div>
+        <div class="card-pane-title">
+            {{itemData.title}}
+        </div>
+    </div>
+    
+</a>
