@@ -30,6 +30,7 @@ import {DetailsComponent} from './trending/details/details.component';
 
 
 
+
 @NgModule({
 
   declarations: [
@@ -53,6 +54,7 @@ import {DetailsComponent} from './trending/details/details.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     ButtonModule,
     SpeedDialModule,
     ColorPickerModule,

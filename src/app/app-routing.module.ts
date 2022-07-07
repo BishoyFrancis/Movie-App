@@ -10,8 +10,8 @@ import { TrendingMoviesComponent } from './trending/trending-movies/trending-mov
 
 const routes: Routes = [
 
-   {path:'auth' ,
-    loadChildren:()=>import ('./auth/auth.module').then(m => m.AuthModule)}
+  {path:'auth' ,
+    loadChildren:()=>import ('./auth/auth.module').then(m => m.AuthModule)},
   {path:'', component:LandingPageComponent},
   {path:'home', component:TrendingHomeComponent},
   {path:'movies', component:TrendingMoviesComponent},
