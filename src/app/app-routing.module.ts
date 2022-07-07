@@ -9,6 +9,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { TrendingMoviesComponent } from './trending/trending-movies/trending-movies.component';
 
 const routes: Routes = [
+
+   {path:'auth' ,
+    loadChildren:()=>import ('./auth/auth.module').then(m => m.AuthModule)}
   {path:'', component:LandingPageComponent},
   {path:'home', component:TrendingHomeComponent},
   {path:'movies', component:TrendingMoviesComponent},
