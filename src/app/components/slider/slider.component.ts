@@ -19,31 +19,19 @@ export class SliderComponent implements OnInit {
   
   baseUrl:string="https://image.tmdb.org/t/p/original/";
 
-  name:string="";
-  date:string="";
 
   slideIndex:number=0;
 
   constructor() {}
   
-  
 
   ngOnInit(): void {
-    // switch(this.sliderItems[0].media_type) {
-    //   case "tv":
-    //       this.name="name"
-    //     break;
-    //   case "movie":
-    //       this.name="title"
-    //     break;
-    //   default:
-    //     console.log(this.sliderItems[0].media_type)
-    // }
     setInterval(()=>{
       this.slideIndex++; 
       if(this.slideIndex==this.sliderItems.length){
         this.slideIndex=0;
       }
     },5000)
+    
   }
 }

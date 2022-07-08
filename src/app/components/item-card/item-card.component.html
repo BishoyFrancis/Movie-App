@@ -1,16 +1,18 @@
 <a class="card m-1" routerLink="/details">
     
     <div class="card-image">
-        <img [src]="baseUrl+itemData.poster_path" alt="" class="img-fluid">
+        <img [src]="baseUrl+itemData.profile_path" alt="" class="img-fluid" *ngIf="itemData.profile_path">
+        <img [src]="baseUrl+itemData.poster_path" alt="" class="img-fluid" *ngIf="itemData.poster_path">
+        <img src="../../../assets/man.png" alt="" *ngIf="(itemData.gender==2 || itemData.gender==0) && itemData.profile_path==null">
+        <img src="../../../assets/woman.png" alt="" *ngIf="itemData.gender==1 && itemData.profile_path==null">
     </div>
     <div class="card-pane">
-        <div class="card-pane-rating">
+        <div class="card-pane-rating" *ngIf="itemData.poster_path">
             <span>{{itemData.vote_average | number:'1.0-1'}} </span>
-            <i class="pi pi-star-fill text-warning"> </i>
+            <i class="pi pi-star-fill text-warning" > </i>
         </div>
-        <div class="card-pane-title">
-            {{itemData.title}}
-        </div>
+        <div class="card-pane-title" *ngIf="itemData.title">{{itemData.title}}</div>
+        <div class="card-pane-title" *ngIf="itemData.name">{{itemData.name}}</div>
     </div>
     
 </a>

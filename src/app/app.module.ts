@@ -24,7 +24,9 @@ import {TrendingMoviesComponent} from './trending/trending-movies/trending-movie
 import {TrendingTvComponent} from './trending/trending-tv/trending-tv.component';
 import {TrendingPeopleComponent} from './trending/trending-people/trending-people.component';
 import {TrendingFavouriteComponent} from './trending/trending-favourite/trending-favourite.component';
+import {TrendingHomeComponent} from './trending/trending-home/trending-home.component';
 import {DetailsComponent} from './trending/details/details.component';
+
 
 
 
@@ -43,6 +45,7 @@ import {DetailsComponent} from './trending/details/details.component';
     TrendingFavouriteComponent,
     TrendingPeopleComponent,
     TrendingTvComponent,
+    TrendingHomeComponent,
     DetailsComponent,
     ItemsComponent,
     ItemCardComponent,
