@@ -26,6 +26,9 @@ import {TrendingPeopleComponent} from './trending/trending-people/trending-peopl
 import {TrendingFavouriteComponent} from './trending/trending-favourite/trending-favourite.component';
 import {TrendingHomeComponent} from './trending/trending-home/trending-home.component';
 import {DetailsComponent} from './trending/details/details.component';
+import { HomeSliderComponent } from './components/home-slider/home-slider.component';
+import {SkeletonModule} from 'primeng/skeleton';
+import {PaginatorModule} from 'primeng/paginator';
 
 
 
@@ -50,6 +53,7 @@ import {DetailsComponent} from './trending/details/details.component';
     ItemsComponent,
     ItemCardComponent,
     SliderComponent,
+    HomeSliderComponent
   ],
 
   imports: [
@@ -60,6 +64,8 @@ import {DetailsComponent} from './trending/details/details.component';
     ReactiveFormsModule,
     ButtonModule,
     SpeedDialModule,
+    SkeletonModule,
+    PaginatorModule,
     ColorPickerModule,
     HttpClientModule,
     DropdownModule,

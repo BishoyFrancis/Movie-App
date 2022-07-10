@@ -21,7 +21,6 @@ export class TrendingMoviesComponent implements OnInit {
     this._moviesService.getMovies("movie").subscribe((res)=>{
       this.movies=res.results;
     })
-    
   }
-
+  
 }

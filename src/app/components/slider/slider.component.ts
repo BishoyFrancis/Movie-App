@@ -19,7 +19,6 @@ export class SliderComponent implements OnInit {
   
   baseUrl:string="https://image.tmdb.org/t/p/original/";
 
-
   slideIndex:number=0;
 
   constructor() {}

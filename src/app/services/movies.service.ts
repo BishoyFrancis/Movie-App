@@ -12,5 +12,7 @@ export class MoviesService {
     return this._httpCLient.get<RequestData>(`https://api.themoviedb.org/3/trending/${type}/day?api_key=021319f713024b2729233237c8526d9f`)
   }
 
-
+  getPage(type:string,page:number){
+    return this._httpCLient.get<RequestData>(`https://api.themoviedb.org/3/trending/${type}/day?page=${page}&api_key=021319f713024b2729233237c8526d9f`)
+  }
 }
