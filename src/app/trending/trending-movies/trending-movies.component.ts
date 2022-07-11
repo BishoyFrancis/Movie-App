@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
+
 @Component({
   selector: 'app-trending-movies',
   templateUrl: './trending-movies.component.html',

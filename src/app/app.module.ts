@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {ToastModule} from 'primeng/toast';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import {TrendingTvComponent} from './trending/trending-tv/trending-tv.component'
 import {TrendingPeopleComponent} from './trending/trending-people/trending-people.component';
 import {TrendingFavouriteComponent} from './trending/trending-favourite/trending-favourite.component';
 import {DetailsComponent} from './trending/details/details.component';
+import { favListReducer } from 'src/favlist.reducer';
 
 
 
@@ -61,13 +63,14 @@ import {DetailsComponent} from './trending/details/details.component';
     HttpClientModule,
     DropdownModule,
     ReactiveFormsModule,
+    ToastModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({fav:favListReducer}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
