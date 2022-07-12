@@ -1,0 +1,113 @@
+{
+  "configVersion": 1,
+  "timestamp": 1657647054942,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/94.fa78de2454de1a38.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.b761194535ad78be.js",
+        "/manifest.webmanifest",
+        "/polyfills.f1658225ec10e50a.js",
+        "/runtime.bf26c15ebe6ce797.js",
+        "/scripts.abbb37f329463b12.js",
+        "/styles.ad44f819252a9133.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/404.b7572586e30424e6.jpg",
+        "/assets/404.jpg",
+        "/assets/all.jpeg",
+        "/assets/cover.png",
+        "/assets/icon.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/logo.png",
+        "/assets/man.png",
+        "/assets/woman.png",
+        "/color.dae87a04d07ca92b.png",
+        "/cover.79ca4a69fc2d9f84.png",
+        "/hue.8b1818380241e6ac.png",
+        "/primeicons.29151a741d66863a.woff",
+        "/primeicons.5f5d08cd089b4e5d.ttf",
+        "/primeicons.76044b1c189cc4d7.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/404.b7572586e30424e6.jpg": "a40085b8666909e5472a41956b81409869881e1d",
+    "/94.fa78de2454de1a38.js": "e752c0e68d380558ed444cd6b905914c2ea858f8",
+    "/assets/404.jpg": "a40085b8666909e5472a41956b81409869881e1d",
+    "/assets/all.jpeg": "633295c495a0d3b8b006e64f914123076c79664b",
+    "/assets/cover.png": "b038163bdc45ece50eed0feee5ff00c111970840",
+    "/assets/icon.png": "e359479867235c9b9e2c9234386cc93d175353c5",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/logo.png": "a9a2e2abb003806d84ebb0e9fd9ca9c6a5a22abf",
+    "/assets/man.png": "a830ed688ea84b5b36e3cc16781d04cff7753a5a",
+    "/assets/woman.png": "9dcc3c562716123000eafa287b4cb39fa4801ba3",
+    "/color.dae87a04d07ca92b.png": "ff4c4bcb2207891b292f544edb4da9d2df5d45cf",
+    "/cover.79ca4a69fc2d9f84.png": "b038163bdc45ece50eed0feee5ff00c111970840",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/hue.8b1818380241e6ac.png": "f81ae627637a684614aa726e206c73ce099a01fd",
+    "/index.html": "1df7de6b2029126a1c9ca3bd988c75b8563dd019",
+    "/main.b761194535ad78be.js": "73f9f83a9decfa49d869d4e502fa1930a0f90e4d",
+    "/manifest.webmanifest": "830e6875ed74f9af89f355d39a6b9dfe2010fed3",
+    "/polyfills.f1658225ec10e50a.js": "c67e7fe4b91a7119b4db99a871137e03fe87e354",
+    "/primeicons.29151a741d66863a.woff": "21e477ea19e15b66344bcc23b3fbb2161092a707",
+    "/primeicons.5f5d08cd089b4e5d.ttf": "e6c86ca90a9fb4282fb35523d56fde00e78a1416",
+    "/primeicons.76044b1c189cc4d7.svg": "621775b2ec555fd2dd152a24390cf6dfeee168b1",
+    "/runtime.bf26c15ebe6ce797.js": "2a935bbcb440ae9a493a071264aa3174836a7854",
+    "/scripts.abbb37f329463b12.js": "f071c80334dd74cc1a8b8d6044d58933cf76d0af",
+    "/styles.ad44f819252a9133.css": "c0c2aa5ef18c67346c3775ae897bb879d928b9f4"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
