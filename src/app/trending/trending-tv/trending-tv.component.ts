@@ -19,7 +19,7 @@ export class TrendingTvComponent implements OnInit {
   ngOnInit(): void {
     this._moviesService.getMovies("tv").subscribe((res)=>{
       this.tv=res.results;
-      console.log(this.tv)
+      
     })
     
   }

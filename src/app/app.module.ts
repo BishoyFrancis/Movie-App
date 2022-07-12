@@ -29,6 +29,9 @@ import {DetailsComponent} from './trending/details/details.component';
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import {SkeletonModule} from 'primeng/skeleton';
 import {PaginatorModule} from 'primeng/paginator';
+import { RemoveSpacesPipe } from './remove-spaces.pipe';
+import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
+import { RemoveColonPipe } from './remove-colon.pipe';
 
 
 
@@ -53,7 +56,10 @@ import {PaginatorModule} from 'primeng/paginator';
     ItemsComponent,
     ItemCardComponent,
     SliderComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    RemoveSpacesPipe,
+    RemoveWhiteSpacePipe,
+    RemoveColonPipe
   ],
 
   imports: [

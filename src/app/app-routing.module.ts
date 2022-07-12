@@ -1,3 +1,4 @@
+import { DetailsComponent } from './trending/details/details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TrendingHomeComponent } from './trending/trending-home/trending-home.component';
 import { TrendingFavouriteComponent } from './trending/trending-favourite/trending-favourite.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'tv', component:TrendingTvComponent},
   {path:'people', component:TrendingPeopleComponent},
   {path:'favourite', component:TrendingFavouriteComponent},
+  {path:'details/:type/:id', component:DetailsComponent},
   {path:'**', component:NotFoundComponent}
 ];
 
