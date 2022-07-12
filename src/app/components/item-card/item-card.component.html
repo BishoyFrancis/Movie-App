@@ -1,4 +1,4 @@
-<a class="card m-1" [routerLink]="'/details/'+itemData.media_type+'/'+itemData.id">
+<a class="card m-1" @fade [routerLink]="'/details/'+itemData.media_type+'/'+itemData.id">
     <div class="card-image">
         <img [src]="baseUrl+itemData.profile_path" alt="" class="img-fluid" *ngIf="itemData.profile_path">
         <img [src]="baseUrl+itemData.poster_path" alt="" class="img-fluid" *ngIf="itemData.poster_path">

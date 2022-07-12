@@ -3,12 +3,20 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Country } from '../provider';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  animations:[
+    trigger('fade',[
+      state('void',style({opacity:0})),
+      transition('void => *',[animate('1s')]),
+      transition('* => void',[animate('500ms')])
+    ])
+  ]
 })
 export class DetailsComponent implements OnInit {
   id: number=0;
