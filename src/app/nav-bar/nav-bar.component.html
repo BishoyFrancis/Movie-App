@@ -1,0 +1,34 @@
+<nav class="navBar navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="../../assets/logo.png" alt=""
+        routerLink="/"></a>
+
+    <form class="list-inline" style="display: contents;" id="searchForm">
+      <div class="form-outline search-hero ">
+        <input id="search-input" type="search" placeholder="Start searching"
+          name="search" [(ngModel)]="searchText" id="form1"
+          class="form-control"/>
+      </div>
+      <input id="search-button" type="submit" class="btn btn-primary "
+        (click)="submit()" [routerLink]="['/search/'+searchText]">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </form>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navItems navbar-nav ms-auto">
+        <a class="nav-item nav-link" routerLink="/home">Home</a>
+        <a class="nav-item nav-link" routerLink="/movies">Movies</a>
+        <a class="nav-item nav-link" routerLink="/tv">TV</a>
+        <a class="nav-item nav-link" routerLink="/people">People</a>
+        <a class="nav-item nav-link" routerLink="/favourite">Favourite</a>
+        <a class="nav-item nav-link" routerLink="/auth">Login</a>
+        <a class="nav-item nav-link" routerLink="/auth/register">Register</a>
+      </div>
+    </div>
+  </div>
+</nav>

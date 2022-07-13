@@ -1,0 +1,14 @@
+<div *ngIf=" searchMovies.length " class="p-5">
+    <h1 class="text-center " style="color:aliceblue"><u><a routerLink="/movies"style="color:aliceblue">Movies</a></u></h1>  
+    <app-items [cardItems]="searchMovies" class=""></app-items>
+</div>
+
+<div *ngIf=" searchTvs.length " class="p-5 ">
+    <h1 class="text-center " style="color:aliceblue"><u><a routerLink="/tv"style="color:aliceblue">TV</a></u></h1> 
+    <app-items [cardItems]="searchTvs"></app-items>
+</div>
+
+<div *ngIf=" searchPeople.length " class="p-5">
+    <h1 class="text-center " ><u><a routerLink="/people" style="color:aliceblue">Actors</a></u></h1>
+    <app-items [cardItems]="searchPeople"></app-items>
+</div>

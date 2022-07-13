@@ -1,0 +1,53 @@
+
+<div>
+ <div class="container pt-5 mb-5">
+  <h2 class=" my-5">Login Form :</h2>
+
+
+  <form    [formGroup]="loginForm"    (ngSubmit)="formInfo(loginForm)">
+
+
+
+   <div class="form-group">
+    <label for="userEmail">Email :</label>
+    <input formControlName="email" type="email" class="form-control my-2" id="userEmail" name="email" />
+
+    <div *ngIf="! loginForm.controls['email'].valid  && loginForm.controls['email'].touched" class="alert alert-danger text-center fw-bolder">
+
+      <p *ngIf="loginForm.controls['email'].errors?.['required']">requrid</p>
+      <p *ngIf="loginForm.controls['email'].errors?.['pattern']">
+         Matches : asmith@mactec.com | foo12@foo.edu | bob.smith@foo.tv <br/> Non-Matches : joe | @foo.com | a@a</p>
+    </div>
+
+
+  </div>
+
+
+   <div class="form-group">
+    <label for="userPass">Password :</label>
+    <input formControlName="password" type="password" class="form-control my-2" id="userPass" name="password" />
+
+    <div *ngIf="! loginForm.controls['password'].valid  && loginForm.controls['password'].touched" class="alert alert-danger text-center fw-bolder">
+
+      <p *ngIf="loginForm.controls['password'].errors?.['required']">requrid</p>
+      <p *ngIf="loginForm.controls['password'].errors?.['pattern']">
+          Match all alphanumeric character and predefined wild characters. Password must  at least 8 characters and not more than 15 characters.<br/>
+        Matches :  @12X*567 | 1#Zv96g@*Yfasd4 | #67jhg </p>
+    </div>
+
+
+  </div>
+
+
+
+<button [disabled]="loginForm.invalid" type="submit" class="btn btn-outline-success my-3 d-block ms-auto">login</button>
+
+
+<h6>If Yoy Do not Have Account ? <a routerLink="/register">Register</a></h6>
+  </form>
+
+
+
+ </div>
+
+
