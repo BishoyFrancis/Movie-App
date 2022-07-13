@@ -35,4 +35,8 @@ export class MoviesService {
   getWatchProviders(type:string,id:number){
     return this._httpCLient.get<Provider>(`https://api.themoviedb.org/3/${type}/${id}/watch/providers?api_key=021319f713024b2729233237c8526d9f`)
   }
+  getSearch(searchWord:string){
+    return this._httpCLient.get(`https://api.themoviedb.org/3/search/multi?query=${searchWord}&api_key=021319f713024b2729233237c8526d9f`)
+  }
+
 }
