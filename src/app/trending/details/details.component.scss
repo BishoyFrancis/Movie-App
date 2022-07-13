@@ -9,6 +9,10 @@
         &-backGround{
             position: relative;
             
+            img{
+                width: 100%;
+            }
+            
             &:after{
                 position: absolute;
                 top: 0;
@@ -39,7 +43,7 @@ a{
     img{
         border-radius: 2rem;
         padding : 1rem 1rem ;
-        height: 5.6rem;
+        height: 5.5rem;
         
     }
     &Btn {

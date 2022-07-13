@@ -1,3 +1,4 @@
+import { Credits } from './../trending/cast';
 import { Provider } from './../trending/provider';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
@@ -21,6 +22,10 @@ export class MoviesService {
 
   getDetails(type:string,id:number){
     return this._httpCLient.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=021319f713024b2729233237c8526d9f`)
+  }
+
+  getCast(type:string,id:number){
+    return this._httpCLient.get<Credits>(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=021319f713024b2729233237c8526d9f`)
   }
 
   getTralier(type:string,id:number){

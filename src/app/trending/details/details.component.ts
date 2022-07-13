@@ -1,3 +1,4 @@
+import { Credits } from './../cast';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -32,9 +33,12 @@ export class DetailsComponent implements OnInit {
 
   providers:any;
 
+  credits:any;
+
   baseUrl:string="https://image.tmdb.org/t/p/original/";
 
   videoUrl: SafeResourceUrl='';
+
 
   constructor(private _route:ActivatedRoute,private _moviesService:MoviesService, private sanitizer:DomSanitizer) { }
 
@@ -64,6 +68,20 @@ export class DetailsComponent implements OnInit {
       this._moviesService.getWatchProviders(this.type,this.id).subscribe((res)=>{
         if(res.results.US){
           this.providers=res.results.US.flatrate
+        }
+      })  
+
+      this._moviesService.getWatchProviders(this.type,this.id).subscribe((res)=>{
+        if(res.results.US){
+          this.providers=res.results.US.flatrate
+        }
+      })  
+
+      this._moviesService.getCast(this.type,this.id).subscribe((res)=>{
+        if(res.cast){
+          this.credits=res.cast
+        }else if(!res.cast){
+          this.credits=res
         }
       })  
     }
