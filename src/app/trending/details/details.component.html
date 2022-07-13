@@ -1,1 +1,99 @@
-<p>details works!</p>
+ <div class="row pt-3" @fade>
+   <div class="slide-backGround col-lg-4  col-12">
+     <img [src]="baseUrl+details.profile_path" alt="" class="img-fluid" *ngIf="details.profile_path">
+     <img [src]="baseUrl+details.poster_path" alt="" class="img-fluid" *ngIf="details.poster_path">
+     <ng-container *ngIf="!details.profile_path">
+       <img src="../../../assets/man.png" alt="" class="img-fluid" *ngIf="type=='person'  && (details.gender==2 || !details.gender) ">
+       <img src="../../../assets/woman.png" alt="" class="img-fluid" *ngIf="type=='person' && details.gender==1 ">
+     </ng-container>
+   </div>
+   
+   <div class="slide-pane d-block col-lg-8 col-12 pt-4 px-4">
+    <div class="watch text-center row">
+      <div class="col-lg-2 col-12 py-5">
+        <a *ngIf="details.profile_path"
+          href="{{'https://tune.egybest.icu/actor/'+((details.name|removeSpaces)|removeColon)}}"><button
+            pButton pRipple type="button" label="Watch" class="p-button-raised p-button watchBtn px-5"><i
+              class="pi pi-caret-right" style="font-size: 2rem"></i></button></a>
+        <a *ngIf="details.release_date"
+          href="{{'https://tune.egybest.icu/movie/'+((details.title|removeSpaces)|removeColon)+'-'+(details.release_date|date:'yyyy')}}"><button
+            pButton pRipple type="button" label="Watch" class="p-button-raised p-button watchBtn  px-5"><i
+              class="pi pi-caret-right" style="font-size: 2rem"></i></button></a>
+        <a *ngIf="details.first_air_date"
+          href="{{'https://tune.egybest.icu/series/'+((details.name|removeSpaces)|removeColon)+'-'+(details.first_air_date|date:'yyyy')}}"><button
+            pButton pRipple type="button" label="Watch" class="p-button-raised p-button watchBtn  px-5"><i
+              class="pi pi-caret-right" style="font-size: 2rem"></i></button></a>
+      </div>
+      <div class="watch-providers col-lg-8 col-12 pb-5 mt-3" *ngIf="type!='person'">
+
+        <ng-container *ngFor="let provider  of providers">
+          <a [href]="'https://www.'+((provider.provider_name | removeWhiteSpace)| lowercase)+'.com'"><img
+              [src]="baseUrl+provider.logo_path" alt="" class="img-fluid"></a>
+        </ng-container>
+
+      </div>
+    </div>
+     <h2 *ngIf="details.title">{{details.title}}</h2>
+     <h2 *ngIf="details.name">{{details.name}}</h2>
+     
+     <div class="slide-pane-desc">
+       <span class="d-block my-4">
+         <span *ngIf="details.overview">{{details.overview}}</span>
+         <span *ngIf="details.biography">{{details.biography}}</span>
+       </span>
+       <div class="row  d-flex justify-content-between">
+
+         <div *ngIf="tralier && type!='person'" class="col-lg-5 col-12 mb-3">
+           <iframe width="100%" height="100%" [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+         </div>
+         <div class="col-lg-6 col-12">
+
+
+           <span *ngIf="type=='movie'||type=='tv'" class="d-block mt-3">
+             <span> Rating : <span class="mx-2">{{details.vote_average | number:'1.0-1'}}</span> <i
+                 class="pi pi-star-fill mx-1  text-warning"> </i> | </span>
+             <span class="mx-2">{{details.vote_count}} Reviews<span></span></span>
+           </span>
+           <span *ngIf="type=='movie'|| type=='tv'" class="d-block mt-3">Release Date :
+             <span class="mx-2" *ngIf="type=='movie'">{{details.release_date | date}}</span>
+             <span class="mx-2" *ngIf="type=='tv'">{{details.first_air_date | date}}</span>
+           </span>
+           <span *ngIf="details['runtime']" class="d-block mt-3">Length :
+             <span class="mx-2">{{details.runtime}} min</span>
+           </span>
+
+           <span *ngIf="details.spoken_languages" class="d-block mt-3">Language :
+             <ng-container *ngFor="let language of details.spoken_languages">
+               <span class="mx-2"> {{language.name}} </span>
+             </ng-container>
+           </span>
+
+           <span *ngIf="details.number_of_episodes" class="d-block mt-3">
+             <span>{{details.number_of_episodes}} episodes</span>
+           </span>
+           <span *ngIf="details.number_of_seasons" class="d-block mt-3">
+             <span>{{details.number_of_seasons}} seasons</span>
+           </span>
+           <span *ngIf="details.production_countries" class="d-block mt-3">Country :
+             <ng-container *ngFor="let country of details.production_countries">
+               <span class="mx-2"> {{country.name}} </span>
+             </ng-container>
+           </span>
+           <span *ngIf="details.genres" class="d-block mt-3">Category :
+             <ng-container *ngFor="let genre of details.genres">
+               <span class="mx-2"> {{genre.name}} </span>
+             </ng-container>
+           </span>
+           <span *ngIf="details.production_companies" class="d-block mt-3">Production Company :
+             <ng-container *ngFor="let company of details.production_companies">
+               <span class="mx-2"> {{company.name}} </span>
+             </ng-container>
+           </span>
+         </div>
+
+       </div>
+       
+     </div>
+   </div>
+ </div>
+ <app-items *ngIf="type!='person'"  [cardItems]="credits"></app-items>

@@ -2,15 +2,17 @@
     padding: 0;
     text-decoration: none;
     display: block;
-    min-height: 350px;
+    min-height: 35vh;
     border-radius: 5px;
     background-color: black;
     color: white;
+    transition: all .5s;
+    
     &-image{
         img{
             width: 100%;
             border-radius: 5px;
-            height: 350px;
+            height: 35vh;
             object-fit: cover;
             
             
@@ -25,6 +27,7 @@
             content: "";
             background-image: linear-gradient(0deg, rgba(0,0,0,1) 16%, rgba(0,0,0,0) 100%);
         }
+        
     }
     &-pane{
        
@@ -41,6 +44,29 @@
             
             padding: .5rem;
         }
+
+        &-fav{
+            text-align: right;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            font-size: 1rem;
+            color: white;
+            padding: .5rem;
+
+            a{
+
+                &:hover{
+                    transform: scale(1.3);
+                    color: red;
+                }
+                &:active{
+                    color: red;
+                }
+            }
+        }
+
         &-title{
             width: 80%;
             position: absolute;
@@ -52,5 +78,10 @@
             font-size: 1rem;
             color: white;
         }
+    }
+
+    &:hover{
+        transform: scale(1.1);
+        
     }
 }
