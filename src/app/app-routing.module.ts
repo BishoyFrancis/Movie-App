@@ -8,6 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TrendingMoviesComponent } from './trending/trending-movies/trending-movies.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,8 @@ const routes: Routes = [
   {path:'people', component:TrendingPeopleComponent},
   {path:'favourite', component:TrendingFavouriteComponent},
   {path:'details/:type/:id', component:DetailsComponent},
+  { path: 'search/:searchWord', component: SearchComponent },
+  { path: 'search', component: SearchComponent },
   {path:'**', component:NotFoundComponent}
 ];
 

@@ -25,7 +25,11 @@ export class ItemsComponent implements OnInit {
   }
 
   paginate(event:any){
-    this.getMoviesPage(this.cardItems[0].media_type,event.page+1)
+    if(this.cardItems[0].media_type!=this.cardItems[0].media_type){
+      this.getMoviesPage('search',event.page+1)
+    }else{
+      this.getMoviesPage(this.cardItems[0].media_type,event.page+1)
+    }
   }
 
 }

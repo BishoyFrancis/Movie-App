@@ -32,6 +32,7 @@ import {PaginatorModule} from 'primeng/paginator';
 import { RemoveSpacesPipe } from './remove-spaces.pipe';
 import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
 import { RemoveColonPipe } from './remove-colon.pipe';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -60,7 +61,8 @@ import { RemoveColonPipe } from './remove-colon.pipe';
     HomeSliderComponent,
     RemoveSpacesPipe,
     RemoveWhiteSpacePipe,
-    RemoveColonPipe
+    RemoveColonPipe,
+    SearchComponent
   ],
 
   imports: [

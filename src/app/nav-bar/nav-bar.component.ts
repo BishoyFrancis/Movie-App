@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+  searchText : string = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  submit() {
+    this.searchText = "";
+  }
 }

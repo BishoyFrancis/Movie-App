@@ -4,6 +4,20 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+
+    <form class="list-inline" style="display: contents;" id="searchForm">
+      <div class="form-outline search-hero ">
+        <input id="search-input" type="search" placeholder="Start searching"
+          name="search" [(ngModel)]="searchText" id="form1"
+          class="form-control"/>
+      </div>
+      <input id="search-button" type="submit" class="btn btn-primary "
+        (click)="submit()" [routerLink]="['/search/'+searchText]">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </form>
+
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <!-- <li class="nav-item">
