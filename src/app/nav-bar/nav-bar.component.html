@@ -16,14 +16,14 @@
           <a class="nav-item nav-link" routerLink="/home">Home</a>
         </li> -->
         <li class="p-input-icon-right nav-item">
-          <i class="pi pi-search"></i>
-          <input class="p-fluid w-100" (keyup)="submit()" [routerLink]="['/search/'+searchText]" type="text" pInputText  [(ngModel)]="searchText" />
+          <i class="pi pi-search" type="submit"></i>
+          <input class="p-fluid w-100" (keyup)="getSearch()"  type="text" pInputText  [(ngModel)]="searchText" />
       </li>
         <li class="nav-item navItem">
           <a class="nav-item nav-link" routerLink="/movies">Movies</a>
         </li>
         <li class="nav-item navItem">
-          <a class="nav-item nav-link" routerLink="/tv">TV</a>
+          <a class="nav-item nav-link" routerLink="/tv">Serieses</a>
         </li>
         <li class="nav-item navItem">
           <a class="nav-item nav-link" routerLink="/people">Stars</a>

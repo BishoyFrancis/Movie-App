@@ -1,5 +1,8 @@
-<div *ngIf="!searched">
+<div *ngIf="searched==''">
+    <img src="../../assets/nosignal.jpg" class="img-fluid w-100" alt="">
+</div>
+<div *ngIf="searched">
     <div *ngIf=" searched.length " class="p-5"> 
-        <app-items [cardItems]="searched" class=""></app-items>
+        <app-items [cardItems]="searched" ></app-items>
     </div>
 </div>

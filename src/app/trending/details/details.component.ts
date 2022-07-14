@@ -41,6 +41,7 @@ export class DetailsComponent implements OnInit {
 
   videoUrl: SafeResourceUrl='';
 
+  sub:any;
 
   constructor(private _route:ActivatedRoute,private _moviesService:MoviesService, private sanitizer:DomSanitizer) { }
 
@@ -50,7 +51,7 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._route.params.pipe(first()).subscribe((params) => {
+    this.sub=this._route.params.subscribe((params) => {
       this.id = parseInt(params["id"]);
       this.type= params["type"]
 
@@ -82,11 +83,10 @@ export class DetailsComponent implements OnInit {
         }
       })  
     }
-    
+  }
 
-    
-
-    
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }
