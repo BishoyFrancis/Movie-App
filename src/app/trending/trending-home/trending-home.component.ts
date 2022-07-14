@@ -22,15 +22,15 @@ export class TrendingHomeComponent implements OnInit {
   constructor(private _moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    this._moviesService.getMovies("person").subscribe((res)=>{
-      this.people=res.results;
-    })
-    this._moviesService.getMovies("movie").subscribe((res)=>{
-      this.movies=res.results;
-    })
-    this._moviesService.getMovies("tv").subscribe((res)=>{
-      this.tv=res.results;
-    })
+    // this._moviesService.getMovies("person").subscribe((res)=>{
+    //   this.people=res.results;
+    // })
+    // this._moviesService.getMovies("movie").subscribe((res)=>{
+    //   this.movies=res.results;
+    // })
+    // this._moviesService.getMovies("tv").subscribe((res)=>{
+    //   this.tv=res.results;
+    // })
     
   }
 

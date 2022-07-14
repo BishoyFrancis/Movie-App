@@ -4,7 +4,6 @@ import { addToFavList , removeFromFavList } from './favlist.action';
 
 export const initialState:any = {
     movies:[],
-    people: [],
 }
 
 export const favListReducer = createReducer(

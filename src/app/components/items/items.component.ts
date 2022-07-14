@@ -18,14 +18,15 @@ export class ItemsComponent implements OnInit {
   searched:string | null =null;
   credits:Credits[]=[];
   cast:any;
+  parametar:any;
   constructor(private _route:ActivatedRoute,private _moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    // this.cast=this?.cardItems?.[0]?.credit_id
-    // console.log(this.cast)
-    // console.log(this.credits)
+    
+    this.parametar=this._route.snapshot.routeConfig?.path
+
     this._route.params.pipe(first()).subscribe((params) => {
-      this.searched = params['searchWord'];
+      this.searched = params['searchWord'];  
     });
   }
   
@@ -47,7 +48,6 @@ export class ItemsComponent implements OnInit {
   paginate(event:any){
     if(this.searched){
       this.getSearchedPage(event.page+1,this.searched)
-      console.log(this.searched)
     }else{
       this.getMoviesPage(this.cardItems[0].media_type,event.page+1)
       console.log(this.cardItems[0].media_type)

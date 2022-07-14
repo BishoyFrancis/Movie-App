@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, first } from 'rxjs';
 
 
 @Component({
@@ -10,15 +10,21 @@ import { Observable } from 'rxjs';
 
 })
 export class TrendingFavouriteComponent implements OnInit {
+  sub: any;
 
   constructor(private store:Store<{fav : any}>) { }
 
   favlist:any = [];
 
-  fav$ : Observable<any> | undefined
+  fav : Observable<any> | undefined
   
   ngOnInit(): void {
-    this.store.select('fav').subscribe((res)=>{console.log(res)});
+    this.sub=this.store.select('fav').subscribe((res)=>{
+      this.favlist=res.movies
+    });
   }
-
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+  
 }
