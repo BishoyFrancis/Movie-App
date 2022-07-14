@@ -13,6 +13,6 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
   submit() {
-    this.searchText = "";
+    console.log(this.searchText)
   }
 }

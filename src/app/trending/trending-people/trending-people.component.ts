@@ -1,3 +1,4 @@
+import { first } from 'rxjs';
 import { PersonDetails } from './../person-details';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -18,7 +19,7 @@ export class TrendingPeopleComponent implements OnInit {
   constructor(private _moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    this._moviesService.getMovies("person").subscribe((res)=>{
+    this._moviesService.getMovies("person").pipe(first()).subscribe((res)=>{
       this.people=res.results;
     })
     

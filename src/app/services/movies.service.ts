@@ -17,7 +17,11 @@ export class MoviesService {
   }
 
   getPage(type:string,page:number){
-    return this._httpCLient.get<RequestData>(`https://api.themoviedb.org/3/trending/${type}/day?page=${page}&api_key=021319f713024b2729233237c8526d9f`)
+    return this._httpCLient.get<RequestData>(`https://api.themoviedb.org/3/trending/${type}/day?&page=${page}&api_key=021319f713024b2729233237c8526d9f`)
+  }
+
+  getSearchPage(page:number,search:string=''){
+    return this._httpCLient.get<RequestData>(`https://api.themoviedb.org/3/search/multi?query=${search}&page=${page}&api_key=021319f713024b2729233237c8526d9f`)
   }
 
   getDetails(type:string,id:number){
