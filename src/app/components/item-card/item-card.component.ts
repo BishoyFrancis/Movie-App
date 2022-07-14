@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
   selector: 'app-item-card',
   templateUrl: './item-card.component.html',
   styleUrls: ['./item-card.component.scss'],
-  providers:[MessageService]
+  providers:[MessageService],
   animations:[
     trigger('fade',[
       state('void',style({opacity:0})),
@@ -26,30 +26,21 @@ export class ItemCardComponent implements OnInit {
 
   @Input() itemData:any=[];
   
+  media:any;
+
   baseUrl:string="https://image.tmdb.org/t/p/w500/";
-  // fav$ : Observable<any> | undefined;
-
-  
-  
-  constructor(private store:Store<{fav : any}> , private messageService: MessageService) {}
 
 
+  constructor(private _router:Router,private store:Store<{fav : any}> , private messageService: MessageService) {}
 
-  // removeFromFav(id:number){
-  //   const el = document.getElementById(`heart#${this.itemData.id}`);
-  //   this.store.dispatch(removeFromFavList({data:id}));
-  //   this.store.select('fav').subscribe((res)=>{console.log("RESULT OF STATE AFTER REMOVING:",res);});
-  //   el?.classList.remove('fa-solid')
-  // }
+
   
   favButtonClick(id:number){
     const el = document.getElementById(`heart#${this.itemData.id}`);
     if(el?.classList.contains('fa-solid')){
       console.log("HE IS ALREADY IN LIST");
       this.messageService.add({ key:'c',sticky: true, severity:'warn', summary:'Are you sure you want to remove this movie from your Favourite List?', detail:'Confirm to proceed'});
-      // this.store.dispatch(removeFromFavList({data:id}));
-      // this.store.select('fav').subscribe((res)=>{console.log("RESULT OF STATE AFTER REMOVING:",res);});
-      // el?.classList.remove('fa-solid');
+      
     }
     else{
     this.store.dispatch(addToFavList({data : this.itemData}));
@@ -73,25 +64,6 @@ export class ItemCardComponent implements OnInit {
 
   onReject(){this.messageService.clear('c')}
 
-  ngOnInit(): void {
-    this.store.select('fav').subscribe((res)=> {
-        
-      for(let item of res.movies){
-        const el = document.getElementById(`heart#${item.id}`);
-        el?.classList.add('fa-solid');
-      } 
-    });
-
-
-  media:any;
-
-  constructor(private _router:Router) { }
-
-  ngOnInit(): void {
-    
-    this.media=this.itemData.media_type
-  }
-
   getMediaDetails(){
     if(this.media){
       this._router.navigate(['/details/'+this.media+'/'+this.itemData.id]);
@@ -103,4 +75,22 @@ export class ItemCardComponent implements OnInit {
 
   }
 
+  ngOnInit(): void {
+
+    this.media=this.itemData.media_type
+
+    this.store.select('fav').subscribe((res)=> {
+        
+      for(let item of res.movies){
+        const el = document.getElementById(`heart#${item.id}`);
+        el?.classList.add('fa-solid');
+      } 
+    });
+
+
+  
+
+  
+
+}
 }
