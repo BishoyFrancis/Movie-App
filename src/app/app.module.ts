@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {ToastModule} from 'primeng/toast';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -46,6 +48,7 @@ import {InputTextModule} from 'primeng/inputtext';
 
 
 
+
 @NgModule({
 
   declarations: [
@@ -67,7 +70,7 @@ import {InputTextModule} from 'primeng/inputtext';
     RemoveSpacesPipe,
     RemoveWhiteSpacePipe,
     RemoveColonPipe,
-    SearchComponent
+    SearchComponent,
   ],
 
   imports: [

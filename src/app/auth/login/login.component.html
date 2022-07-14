@@ -39,7 +39,7 @@
   </div>
 
 
-<button [disabled]="loginForm.invalid" pButton pRipple type="button" label="Login" class="p-button-outlined p-button-success d-block mx-auto my-4"></button>
+<button [disabled]="loginForm.invalid" pButton pRipple type="button" label="Login" class="p-button-outlined p-button-success d-block mx-auto my-4" (click)="login()"></button>
 
 <h6>If You Do not Have Account ? <a routerLink="/auth/register">Register</a></h6>
   </form>
