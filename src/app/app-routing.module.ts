@@ -1,3 +1,4 @@
+import { DetailsComponent } from './trending/details/details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TrendingHomeComponent } from './trending/trending-home/trending-home.component';
 import { TrendingFavouriteComponent } from './trending/trending-favourite/trending-favourite.component';
@@ -7,6 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TrendingMoviesComponent } from './trending/trending-movies/trending-movies.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
 
@@ -18,6 +20,9 @@ const routes: Routes = [
   {path:'tv', component:TrendingTvComponent},
   {path:'people', component:TrendingPeopleComponent},
   {path:'favourite', component:TrendingFavouriteComponent},
+  {path:'details/:type/:id', component:DetailsComponent},
+  { path: 'search/:searchWord', component: SearchComponent },
+  { path: 'search', component: SearchComponent },
   {path:'**', component:NotFoundComponent}
 ];
 

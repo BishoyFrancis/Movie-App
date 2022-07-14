@@ -1,4 +1,4 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { MovieDetails } from './../movie-details';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -10,7 +10,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class TrendingMoviesComponent implements OnInit {
 
-  movies:any=[];
+  movies:MovieDetails[]=[];
 
   baseUrl:string="https://image.tmdb.org/t/p/original/";
 
@@ -19,10 +19,9 @@ export class TrendingMoviesComponent implements OnInit {
   constructor(private _moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    this._moviesService.getMovies("movie").subscribe((res:any)=>{
+    this._moviesService.getMovies("movie").subscribe((res)=>{
       this.movies=res.results;
     })
-    
   }
-
+  
 }

@@ -1,16 +1,26 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { addToFavList } from 'src/favlist.action';
 import { MoviesService } from 'src/app/services/movies.service';
 import { MessageService } from 'primeng/api';
 import { removeFromFavList } from 'src/favlist.action';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-item-card',
   templateUrl: './item-card.component.html',
   styleUrls: ['./item-card.component.scss'],
   providers:[MessageService]
+  animations:[
+    trigger('fade',[
+      state('void',style({opacity:0})),
+      transition('void => *',[animate('1s')]),
+      transition('* => void',[animate('500ms')])
+    ])
+  ]
 })
 export class ItemCardComponent implements OnInit {
 
@@ -22,6 +32,7 @@ export class ItemCardComponent implements OnInit {
   
   
   constructor(private store:Store<{fav : any}> , private messageService: MessageService) {}
+
 
 
   // removeFromFav(id:number){
@@ -70,6 +81,25 @@ export class ItemCardComponent implements OnInit {
         el?.classList.add('fa-solid');
       } 
     });
+
+
+  media:any;
+
+  constructor(private _router:Router) { }
+
+  ngOnInit(): void {
+    
+    this.media=this.itemData.media_type
+  }
+
+  getMediaDetails(){
+    if(this.media){
+      this._router.navigate(['/details/'+this.media+'/'+this.itemData.id]);
+      
+    }else if(!this.media){
+      this._router.navigate(['/details/person/'+this.itemData.id]);
+    }
+    
 
   }
 

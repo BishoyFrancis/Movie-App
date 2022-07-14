@@ -26,9 +26,20 @@ import {TrendingMoviesComponent} from './trending/trending-movies/trending-movie
 import {TrendingTvComponent} from './trending/trending-tv/trending-tv.component';
 import {TrendingPeopleComponent} from './trending/trending-people/trending-people.component';
 import {TrendingFavouriteComponent} from './trending/trending-favourite/trending-favourite.component';
+import {TrendingHomeComponent} from './trending/trending-home/trending-home.component';
 import {DetailsComponent} from './trending/details/details.component';
 import { favListReducer } from 'src/favlist.reducer';
 import { HeaderLang } from './header-lang';
+import { HomeSliderComponent } from './components/home-slider/home-slider.component';
+import {SkeletonModule} from 'primeng/skeleton';
+import {PaginatorModule} from 'primeng/paginator';
+import { RemoveSpacesPipe } from './remove-spaces.pipe';
+import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
+import { RemoveColonPipe } from './remove-colon.pipe';
+import { SearchComponent } from './search/search.component';
+
+
+
 
 
 
@@ -47,10 +58,16 @@ import { HeaderLang } from './header-lang';
     TrendingFavouriteComponent,
     TrendingPeopleComponent,
     TrendingTvComponent,
+    TrendingHomeComponent,
     DetailsComponent,
     ItemsComponent,
     ItemCardComponent,
     SliderComponent,
+    HomeSliderComponent,
+    RemoveSpacesPipe,
+    RemoveWhiteSpacePipe,
+    RemoveColonPipe,
+    SearchComponent
   ],
 
   imports: [
@@ -61,6 +78,8 @@ import { HeaderLang } from './header-lang';
     ReactiveFormsModule,
     ButtonModule,
     SpeedDialModule,
+    SkeletonModule,
+    PaginatorModule,
     ColorPickerModule,
     HttpClientModule,
     DropdownModule,
