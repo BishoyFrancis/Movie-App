@@ -23,8 +23,8 @@
     </button>
   <span>Favorite</span>
 </div>
-<p-toast [showTransformOptions]="'translateX(100%)'" styleClass="custom-toast"></p-toast>
 
+<p-toast  [showTransformOptions]="'translateX(100%)'" styleClass="custom-toast"></p-toast>
 <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
     <ng-template let-message pTemplate="message">
         <div class="flex flex-column" style="flex: 1">

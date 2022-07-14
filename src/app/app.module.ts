@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {ToastModule} from 'primeng/toast';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import {TrendingPeopleComponent} from './trending/trending-people/trending-peopl
 import {TrendingFavouriteComponent} from './trending/trending-favourite/trending-favourite.component';
 import {DetailsComponent} from './trending/details/details.component';
 import { favListReducer } from 'src/favlist.reducer';
+import { HeaderLang } from './header-lang';
 
 
 
@@ -72,7 +74,7 @@ import { favListReducer } from 'src/favlist.reducer';
     }),
     StoreModule.forRoot({fav:favListReducer}, {})
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HeaderLang, multi: true},],
   bootstrap: [AppComponent]
 })
 

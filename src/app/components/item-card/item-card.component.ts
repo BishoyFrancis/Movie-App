@@ -49,7 +49,7 @@ export class ItemCardComponent implements OnInit {
   }
 
   addSingle(data:any) {
-    this.messageService.add({severity:'success', summary:`Added ${data.title} To your Favourite List` });
+    this.messageService.add({severity:'success', summary:`Added ${data.title} To your Favourite List` , life:1200});
   }
 
   onConfirm(id:number){
@@ -57,13 +57,20 @@ export class ItemCardComponent implements OnInit {
   this.store.dispatch(removeFromFavList({data:id}));
   this.store.select('fav').subscribe((res)=>{console.log("RESULT OF STATE AFTER REMOVING:",res);});
   el?.classList.remove('fa-solid');
-  this.messageService.clear('c')
-
+  this.messageService.clear('c');
 }
 
   onReject(){this.messageService.clear('c')}
 
   ngOnInit(): void {
+    this.store.select('fav').subscribe((res)=> {
+        
+      for(let item of res.movies){
+        const el = document.getElementById(`heart#${item.id}`);
+        el?.classList.add('fa-solid');
+      } 
+    });
+
   }
 
 }
