@@ -1,3 +1,4 @@
+import { first } from 'rxjs';
 import { MovieDetails } from './../movie-details';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -19,7 +20,7 @@ export class TrendingMoviesComponent implements OnInit {
   constructor(private _moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    this._moviesService.getMovies("movie").subscribe((res)=>{
+    this._moviesService.getMovies("movie").pipe(first()).subscribe((res)=>{
       this.movies=res.results;
     })
   }

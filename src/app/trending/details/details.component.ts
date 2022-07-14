@@ -1,3 +1,4 @@
+import { first } from 'rxjs';
 import { Credits } from './../cast';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -21,6 +22,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 export class DetailsComponent implements OnInit {
   id: number=0;
+  
   type:string='';
 
   details:any=[];
@@ -48,36 +50,31 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._route.params.subscribe((params) => {
+    this._route.params.pipe(first()).subscribe((params) => {
       this.id = parseInt(params["id"]);
       this.type= params["type"]
 
-    this._moviesService.getDetails(this.type,this.id).subscribe((res)=>{
+    this._moviesService.getDetails(this.type,this.id).pipe(first()).subscribe((res)=>{
       this.details=res
     })  
     });
 
     if(this.type!='person'){
-      this._moviesService.getTralier(this.type,this.id).subscribe((res)=>{
+      this._moviesService.getTralier(this.type,this.id).pipe(first()).subscribe((res)=>{
         if(res.results[0]){
           this.tralier=res.results[0].key;
           this.videoUrl=this.getSafeUrl('https://www.youtube.com/embed/'+this.tralier+'?autoplay=1')
         }
       })  
   
-      this._moviesService.getWatchProviders(this.type,this.id).subscribe((res)=>{
+      this._moviesService.getWatchProviders(this.type,this.id).pipe(first()).subscribe((res)=>{
         if(res.results.US){
           this.providers=res.results.US.flatrate
         }
       })  
 
-      this._moviesService.getWatchProviders(this.type,this.id).subscribe((res)=>{
-        if(res.results.US){
-          this.providers=res.results.US.flatrate
-        }
-      })  
 
-      this._moviesService.getCast(this.type,this.id).subscribe((res)=>{
+      this._moviesService.getCast(this.type,this.id).pipe(first()).subscribe((res)=>{
         if(res.cast){
           this.credits=res.cast
         }else if(!res.cast){

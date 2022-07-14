@@ -6,36 +6,32 @@
     </button>
 
 
-    <form class="list-inline" style="display: contents;" id="searchForm">
-      <div class="form-outline search-hero ">
-        <input id="search-input" type="search" placeholder="Start searching"
-          name="search" [(ngModel)]="searchText" id="form1"
-          class="form-control"/>
-      </div>
-      <input id="search-button" type="submit" class="btn btn-primary "
-        (click)="submit()" [routerLink]="['/search/'+searchText]">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </form>
+
+    
 
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav  ms-auto ">
         <!-- <li class="nav-item">
           <a class="nav-item nav-link" routerLink="/home">Home</a>
         </li> -->
-        <li class="nav-item">
+        <li class="p-input-icon-right nav-item">
+          <i class="pi pi-search"></i>
+          <input class="p-fluid w-100" (keyup)="submit()" [routerLink]="['/search/'+searchText]" type="text" pInputText  [(ngModel)]="searchText" />
+      </li>
+        <li class="nav-item navItem">
           <a class="nav-item nav-link" routerLink="/movies">Movies</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navItem">
           <a class="nav-item nav-link" routerLink="/tv">TV</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navItem">
           <a class="nav-item nav-link" routerLink="/people">Stars</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navItem">
           <a class="nav-item nav-link" routerLink="/favourite">Favourite</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navItem">
           <a class="nav-item nav-link" routerLink="/auth">Login</a>
         </li>
         

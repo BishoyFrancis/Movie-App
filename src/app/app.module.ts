@@ -37,7 +37,7 @@ import { RemoveSpacesPipe } from './remove-spaces.pipe';
 import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
 import { RemoveColonPipe } from './remove-colon.pipe';
 import { SearchComponent } from './search/search.component';
-
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -82,6 +82,7 @@ import { SearchComponent } from './search/search.component';
     PaginatorModule,
     ColorPickerModule,
     HttpClientModule,
+    InputTextModule,
     DropdownModule,
     ReactiveFormsModule,
     ToastModule,

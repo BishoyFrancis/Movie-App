@@ -2,6 +2,7 @@ import { TvDetails } from './../tv-details';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { RequestData } from '../request-data';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-trending-tv',
@@ -17,11 +18,12 @@ export class TrendingTvComponent implements OnInit {
   constructor(private _moviesService:MoviesService) { }
 
   ngOnInit(): void {
-    this._moviesService.getMovies("tv").subscribe((res)=>{
+    this._moviesService.getMovies("tv").pipe(first()).subscribe((res)=>{
       this.tv=res.results;
       
     })
     
   }
+  
 
 }
