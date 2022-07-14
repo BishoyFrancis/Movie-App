@@ -9,20 +9,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TrendingMoviesComponent } from './trending/trending-movies/trending-movies.component';
 import { SearchComponent } from './search/search.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 
   {path:'auth' ,
     loadChildren:()=>import ('./auth/auth.module').then(m => m.AuthModule)},
   {path:'', component:LandingPageComponent},
-  {path:'home', component:TrendingHomeComponent},
-  {path:'movies', component:TrendingMoviesComponent},
-  {path:'tv', component:TrendingTvComponent},
-  {path:'people', component:TrendingPeopleComponent},
-  {path:'favourite', component:TrendingFavouriteComponent},
-  {path:'details/:type/:id', component:DetailsComponent},
-  { path: 'search/:searchWord', component: SearchComponent },
-  { path: 'search', component: SearchComponent },
+  {path:'home', canActivate:[AuthGuard],component:TrendingHomeComponent},
+  {path:'movies', canActivate:[AuthGuard],component:TrendingMoviesComponent},
+  {path:'tv', canActivate:[AuthGuard],component:TrendingTvComponent},
+  {path:'people', canActivate:[AuthGuard],component:TrendingPeopleComponent},
+  {path:'favourite', canActivate:[AuthGuard],component:TrendingFavouriteComponent},
+  {path:'details/:type/:id', canActivate:[AuthGuard],component:DetailsComponent},
+  { path: 'search/:searchWord', canActivate:[AuthGuard],component: SearchComponent },
+  { path: 'search', canActivate:[AuthGuard],component: SearchComponent },
   {path:'**', component:NotFoundComponent}
 ];
 

@@ -10,7 +10,23 @@ import { Watch } from '../trending/watch';
 })
 export class MoviesService {
 
-  constructor(private _httpCLient:HttpClient) { }
+  isLoggedIn : boolean = false;
+
+  constructor(private _httpCLient:HttpClient) {
+    if(JSON.parse(localStorage.getItem("isLogged")!) !== null){
+      this.isLoggedIn = JSON.parse(localStorage.getItem("isLogged")!)
+    }
+    console.log("STATUS FROM LOCAL STORAGE = ",this.isLoggedIn);
+    
+   }
+
+  getLoggedStatus(){
+    return this.isLoggedIn;
+  }
+
+  setLoggedStatus(status:boolean){
+    this.isLoggedIn = status;
+  }
 
   getMovies(type:string){
     return this._httpCLient.get<RequestData>(`https://api.themoviedb.org/3/trending/${type}/day?api_key=021319f713024b2729233237c8526d9f`)
