@@ -1,0 +1,12 @@
+<div class="cardContainer pt-5">
+    <div class="d-flex justify-content-center container" *ngIf="!this.cardItems?.[0]?.credit_id && parametar!='favourite'">
+    <p-paginator class="py-5" [rows]="20" [totalRecords]="2000" (onPageChange)="paginate($event)" ></p-paginator>
+</div>
+<h2 *ngIf="this.cardItems?.[0]?.credit_id && parametar!='favourite'" class="text-center py-5">Cast</h2>
+<h2 *ngIf="parametar=='favourite'&&this.cardItems.length" class="text-center py-5">Favourite</h2>
+<div class=" row w-100 container d-flex flex-wraper mx-auto pt-5">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-6 " *ngFor="let item of cardItems">
+        <app-item-card [itemData]="item" ></app-item-card>
+    </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+.navBar{
+    background-image: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+    img{
+        width: 5rem;
+    }
+    .navItem{
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+}
+
+input{
+    background-color: transparent;
+    border: 0;
+}

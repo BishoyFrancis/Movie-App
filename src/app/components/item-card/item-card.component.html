@@ -1,0 +1,56 @@
+<p-toast  [showTransformOptions]="'translateX(100%)'" styleClass="custom-toast"></p-toast>
+<p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+        <div class="flex flex-column" style="flex: 1">
+            <div class="text-center">
+                <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+                <h4>{{message.summary}}</h4>
+                <p>{{message.detail}}</p>
+            </div>
+            <div class="row grid p-fluid">
+                <div class="col-6">
+                    <button type="button" pButton (click)="onConfirm(itemData.id)" label="Yes" class="p-button-success"></button>
+                </div>
+                <div class="col-6">
+                    <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-toast>
+
+<div class="card m-1" @fade (click)='getMediaDetails()' >
+    <div class="card-image">
+        <img [src]="baseUrl+itemData.profile_path" alt="" class="img-fluid" *ngIf="itemData.profile_path">
+        <img [src]="baseUrl+itemData.poster_path" alt="" class="img-fluid" *ngIf="itemData.poster_path">
+        <img src="../../../assets/man.png" alt="" *ngIf="(itemData.gender==2 || itemData.gender==0) && itemData.profile_path==null">
+        <img src="../../../assets/woman.png" alt="" *ngIf="itemData.gender==1 && itemData.profile_path==null">
+    </div>
+    <div class="card-pane">
+        
+        <div class="card-pane-rating" *ngIf="itemData.poster_path">
+            <span>{{itemData.vote_average | number:'1.0-1'}} </span>
+            <i class="pi pi-star-fill text-warning" > </i>
+        </div>
+
+        <div class="card-pane-fav">
+            <button class="btn favIcon">
+                <i
+                  [id]="itemData.id"
+                  (click)="favButtonClick(itemData.id,$event)"
+                  class="fa-regular fa-heart"
+                  style="font-size: 1.8rem; color: red"
+                ></i>
+              </button>
+        </div>
+        
+        <div class="card-pane-title" *ngIf="itemData.title">{{itemData.title}}</div>
+        <div class="card-pane-title" *ngIf="itemData.name">{{itemData.name}}</div>
+    </div>
+   
+
+</div>
+
+
+
+

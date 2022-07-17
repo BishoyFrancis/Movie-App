@@ -1,0 +1,38 @@
+<nav class="navBar navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand "><img src="../../assets/logo.png" alt="" routerLink="/"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav  ms-auto ">
+        <li class="p-input-icon-right nav-item">
+          <i class="pi pi-search" type="submit"></i>
+          <input class="p-fluid w-100" (keyup)="getSearch()"  type="text" pInputText  [(ngModel)]="searchText" />
+      </li>
+        <li class="nav-item navItem">
+          <a class="nav-item nav-link" routerLink="/movies">Movies</a>
+        </li>
+        <li class="nav-item navItem">
+          <a class="nav-item nav-link" routerLink="/tv">Serieses</a>
+        </li>
+        <li class="nav-item navItem">
+          <a class="nav-item nav-link" routerLink="/people">Stars</a>
+        </li>
+        <li class="nav-item navItem">
+          <a class="nav-item nav-link" routerLink="/favourite">Favourite</a>
+        </li>
+        
+        <li class="nav-item navItem">
+          <a class="nav-item nav-link" routerLink="/auth">Login</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>

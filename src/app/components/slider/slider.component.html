@@ -1,0 +1,26 @@
+<div class="slider" >
+    <ng-container *ngFor="let item of sliderItems; let i=index">
+    <a class="slide"  *ngIf="i== slideIndex" @fade [routerLink]="'/details/'+item.media_type+'/'+item.id">
+        <div class="slide-backGround">
+            <img class="slide-backGround-image" [src]="baseUrl+item.poster_path" alt="">
+        </div>
+        <div class="slide-pane">
+            <h2 class="movieName" *ngIf="item.title">{{item.title}}</h2>
+            <h2 class="movieName" *ngIf="item.name">{{item.name}}</h2>
+            <div class="desc">
+                <div class="info">
+                    <span class="rating d-block">
+                        <span>  </span><span class="rating-value">{{item.vote_average | number:'1.0-1'}} <i class="pi pi-star-fill mx-1 my-3 text-warning"> </i></span><span class="iSpace mx-2">|</span>
+                        <span>{{item.vote_count}} Reviews<span class="iSpace mx-2">|</span></span>
+                        <span *ngIf="item.release_date">{{item.release_date | date}}</span>
+                        <span *ngIf="item.first_air_date">{{item.first_air_date | date}}</span>
+                        <span *ngIf="item.overview.length>150" class="d-block mt-4">{{item.overview.slice(0, 150)}}...</span>
+                        <span *ngIf="item.overview.length<=150" class="d-block mt-4">{{item.overview}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </a>
+</ng-container>
+</div>
+
