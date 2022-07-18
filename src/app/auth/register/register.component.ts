@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   });
   formInfo(formInfo:any){
-   console.log(formInfo);
+  //  console.log(formInfo);
 
   }
   

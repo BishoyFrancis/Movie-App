@@ -17,8 +17,7 @@ export class AppComponent {
  
 show:boolean = false;
 constructor(private router:Router){
-  window.localStorage.clear();
-  this.router.navigate(['/'])
+  // this.router.navigate(['/'])
 
  }
 }

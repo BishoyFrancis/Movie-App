@@ -23,8 +23,8 @@
     <div class="card-image">
         <img [src]="baseUrl+itemData.profile_path" alt="" class="img-fluid" *ngIf="itemData.profile_path">
         <img [src]="baseUrl+itemData.poster_path" alt="" class="img-fluid" *ngIf="itemData.poster_path">
-        <img src="../../../assets/man.png" alt="" *ngIf="(itemData.gender==2 || itemData.gender==0) && itemData.profile_path==null">
-        <img src="../../../assets/woman.png" alt="" *ngIf="itemData.gender==1 && itemData.profile_path==null">
+        <img src="assets/man.png" alt="" *ngIf="(itemData.gender==2 || itemData.gender==0) && itemData.profile_path==null">
+        <img src="assets/woman.png" alt="" *ngIf="itemData.gender==1 && itemData.profile_path==null">
     </div>
     <div class="card-pane">
         
@@ -33,13 +33,13 @@
             <i class="pi pi-star-fill text-warning" > </i>
         </div>
 
-        <div class="card-pane-fav">
+        <div  class="card-pane-fav">
             <button class="btn favIcon">
                 <i
                   [id]="itemData.id"
                   (click)="favButtonClick(itemData.id,$event)"
                   class="fa-regular fa-heart"
-                  style="font-size: 1.8rem; color: red"
+                  style="font-size: 1.4rem; color: #A10035"
                 ></i>
               </button>
         </div>

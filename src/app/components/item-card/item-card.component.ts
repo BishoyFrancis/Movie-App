@@ -30,9 +30,14 @@ export class ItemCardComponent implements OnInit {
 
   baseUrl:string="https://image.tmdb.org/t/p/w500/";
   id: any;
+  favList: any;
 
 
-  constructor(private _router:Router,private store:Store<{fav : any}> , private messageService: MessageService) {}
+  constructor(private _router:Router,private store:Store<{fav : any}> , private messageService: MessageService) {
+    this.store.select('fav').pipe(first()).subscribe((res)=> {
+      this.favList=res.movies
+    });
+  }
 
 
   
@@ -82,17 +87,18 @@ export class ItemCardComponent implements OnInit {
   ngOnInit(): void {
 
     this.media=this.itemData.media_type
-
+    console.log(this.favList)
     
 
-    this.store.select('fav').subscribe((res)=> {
-      
-    for(let item of res.movies){
+  }
+  ngAfterViewChecked(){
+    for(let item of this.favList){
       const elem = document.getElementById(item.id);
-      elem?.classList.add('fa-solid');
+      if(elem){
+        elem.classList.add('fa-solid');
+      }
+      
     } 
-  });
-
   }
 
 }

@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
      login(){
       this.service.setLoggedStatus(true);
       localStorage.setItem("isLogged",JSON.stringify(true))
-      alert("Success");
       this.router.navigate(['/movies']);
 
      }
